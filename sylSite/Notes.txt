@@ -1,0 +1,3 @@
+Admin login (Dev):
+    U: admin
+    P: admin1234
