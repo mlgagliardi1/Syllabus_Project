@@ -16,8 +16,16 @@
     <body>
         <!--        Header      -->
         <header>
-            <div id="logo">Logo Here!</div>
-            <div id="title"><p id="titleText">Syllabus Analyzer</p></div>
+            <div id="logo">
+                <a class="headerLink" href="{% url 'sylAnalyzer:homepage' %}">
+                    Logo Here!
+                </a>
+            </div>
+            <div id="title">
+                <a class="headerLink" href="{% url 'sylAnalyzer:homepage' %}">
+                    <p id="titleText">Syllabus Analyzer</p>
+                </a>
+            </div>
             <div id="login">Login Here?></div>
         </header>
         <div id="divider1" class="divider"></div>
@@ -25,8 +33,9 @@
         <!--        Top Navigation      -->
         <div id="topNav">
             <div id="topNavLinks">
-                <a href="{% url 'sylAnalyzer:details' %}">What is a good syllabus?</a>
-                <a href="{% url 'sylAnalyzer:examples' %}">View some examples</a>
+                <a class="navLink" href="{% url 'sylAnalyzer:details' %}">Components of a Good Syllabus?</a>
+                <a class="navLink" href="{% url 'sylAnalyzer:examples' %}">Examples</a>
+                <a class="navLink" href="{% url 'sylAnalyzer:explanation' %}">What does this site do?</a>
             </div>
         </div>
         <div id="divider2" class="divider"></div>
