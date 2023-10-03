@@ -1,0 +1,64 @@
+:root {
+    font-size: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    --backgroundColor: black;
+}
+
+/*      ELEMENT SELECTORS       */
+html {
+    background-color: var(--backgroundColor);
+    color: white;
+}
+
+header {
+    height: 10rem;
+    width: 100%;
+    margin-bottom: 0;
+    display: inline-flex;
+}
+
+
+
+/*      ID SELECTORS       */
+/* HEADER */
+#logo {
+    height: 100%;
+    width: 20%;
+    background-color: teal;
+}
+
+#title {
+    height: 100%;
+    width: 60%;
+    background-color: lightblue;
+}
+
+#title p {
+    margin: 2rem auto auto auto;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--backgroundColor);
+}
+
+#login {
+    height: 100%;
+    width: 20%;
+    background-color: lightgreen;
+}
+
+/* TOP NAVIGATION */
+
+/* CONTENT */
+
+
+
+/*      CLASSES     */
+.divider {
+    height: 1rem;
+    width: 100%;
+    margin: 0;
+    clear: both;
+    border: none;
+    background-color: var(--backgroundColor);
+}

@@ -4,7 +4,10 @@ from django.http import HttpResponse
 # Create your views here.
 
 def homepage(request):
-    return HttpResponse("Hello World, you are at the syllabus analyzer homepage.")
+    return render(request, "sylAnalyzer/homepage.html")
 
-def results(request):
-    return HttpResponse("Hello again, you are at the results page.")
+def details(request):
+    return render(request, "sylAnalyzer/details.html")
+
+def examples(request):
+    return render(request, "sylAnalyzer/examples.html")

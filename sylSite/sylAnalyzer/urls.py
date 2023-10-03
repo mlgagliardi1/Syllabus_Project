@@ -4,5 +4,6 @@ from . import views
 app_name = "sylAnalyzer"
 urlpatterns = [
     path("", views.homepage, name="homepage"),
-    path("results/", views.results, name="results"),
+    path("details/", views.details, name="details"),
+    path("examples/", views.examples, name="examples"),
 ]
