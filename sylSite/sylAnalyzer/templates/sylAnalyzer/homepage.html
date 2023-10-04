@@ -9,8 +9,8 @@
         <meta charset="UTF-8">
         <meta name="keywords" content="syllabus, university, course, schedule, natural language processing">
         <meta name="author" content="Michael Gagliardi">
-        <link rel="stylesheet" href="{% static 'Sylanalyzer/homepage.css'%}">
-        <script type="text/javascript" src="{% static 'sylAnalyzer/homepage.js'%}"></script>
+        <link rel="stylesheet" href="{% static 'sylAnalyzer\\homepage.css'%}">
+        <script type="text/javascript" src="{% static 'Sylanalyzer\\homepage.js'%}"></script>
     </head>
 
     <body>
@@ -41,7 +41,10 @@
         <div id="divider2" class="divider"></div>
 
         <!--        Left Panel      -->
-        <div id="left"></div>
+        <div id="left">
+            <p id="inputInst">To begin, please input a syllabus below:</p>
+            <input id="file" type="file" accepted=".PDF, .doc" onchange="test();">
+        </div>
 
         <!--        Right Panel     -->
         <div id="right"></div>

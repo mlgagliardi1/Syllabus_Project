@@ -81,8 +81,13 @@ footer {
     height: 50rem;
     width: 50%;
     float: left;
+    text-align: center;
     border: none;
     background-color: lightskyblue;
+}
+
+#inputInst {
+    font-size: 1.6rem;
 }
 
 #right {
@@ -114,8 +119,10 @@ footer {
 }
 
 .navLink:hover, .navLink:active {
-    color: red;
-    background-color: white;
+    transform: scale(1.2);
+    transition-duration: 1s;
+    color: black;
+    background-color: green;
 }
 
 .headerLink {
