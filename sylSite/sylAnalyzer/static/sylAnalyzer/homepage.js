@@ -1,3 +1,6 @@
-function test() {
-    console.log("test worked");
+
+function fileInput() {
+    console.log("A file has been input worked");
+
+    
 }

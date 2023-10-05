@@ -116,6 +116,7 @@ footer {
     text-decoration: none;
     color: var(--backgroundColor);
     border: 0.2rem solid black;
+    border-radius: 0.5rem;
 }
 
 .navLink:hover, .navLink:active {
