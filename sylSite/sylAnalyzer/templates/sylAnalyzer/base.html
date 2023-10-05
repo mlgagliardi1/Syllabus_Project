@@ -1,16 +1,30 @@
+<!--
+    List of available blocks when extending the base template:
+    tabTitle
+    stylesheet
+    javascript
+    pageTitle
+    content
+    footerText
+-->
+
 <!--        Call to load files      -->
 {%load static%}
 
-<!--        HTML Template       -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Syllabus Analyzer</title>
+        <title>
+            {% block tabTitle%}
+                Syllabus Analyzer
+            {% endblock %}
+        </title>
         <meta charset="UTF-8">
         <meta name="keywords" content="syllabus, university, course, schedule, natural language processing">
         <meta name="author" content="Michael Gagliardi">
-        <link rel="stylesheet" href="{% static 'sylAnalyzer\\homepage.css'%}">
-        <script type="text/javascript" src="{% static 'Sylanalyzer\\homepage.js'%}"></script>
+        <link rel="stylesheet" href="{% block stylsheet %}{% static 'sylanalyzer\\homepage.css'%}{% endblock %}">
+        <script type="text/javascript" src="{% block javascript %}{% static 'sylanalyzer\\homepage.js'%} {% endblock %}"></script>
     </head>
 
     <body>
@@ -23,7 +37,9 @@
             </div>
             <div id="title">
                 <a class="headerLink" href="{% url 'sylAnalyzer:homepage' %}">
-                    <p id="titleText">Syllabus Analyzer</p>
+                    <p id="titleText">
+                        {% block pageTitle %}Syllabus Analyzer{% endblock %}
+                    </p>
                 </a>
             </div>
             <div id="login">Login Here?></div>
@@ -40,19 +56,14 @@
         </div>
         <div id="divider2" class="divider"></div>
 
-        <!--        Left Panel      -->
-        <div id="left">
-            <p id="inputInst">To begin, please input a syllabus below:</p>
-            <input id="file" type="file" accepted=".PDF, .doc" onchange="test();">
-        </div>
-
-        <!--        Right Panel     -->
-        <div id="right"></div>
-        <div id="divider3" class="divider"></div>
+        {% block content %}
+        {% endblock %}
 
         <!--        Footer      -->
         <footer>
-            <p id="footerText">Indiana University Syllabus Analyzer &copy; 2023</p>
+            <p id="footerText">
+                {% block footerText %}Indiana University Syllabus Analyzer &copy; 2023{% endblock %}
+            </p>
         </footer>
     </body>
 </html>

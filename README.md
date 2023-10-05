@@ -32,5 +32,8 @@
   * Make Up Policy
   * Course Schedule
 
+## Notes from the developer
+  This project was intended to be utilized with the packages in requirements.txt (see main directory). Please install the associated packages into a virtual environment.
+
 ## Affiliations
   This project is being developed under the supervision of Dr. Hossain of Indiana University.
