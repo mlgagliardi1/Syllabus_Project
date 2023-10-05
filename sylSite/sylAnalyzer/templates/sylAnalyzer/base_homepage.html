@@ -6,8 +6,9 @@
         <!--        Left Panel      -->
         <div id="left">
             <p id="inputInst">To begin, please input a syllabus below:</p>
-            {% csrf_token %}
+          
             <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
                 <input id="file" type="file" accepted=".PDF, .doc">
                 <br/>
                 <br/>
