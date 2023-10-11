@@ -7,9 +7,9 @@
         <div id="left">
             <p id="inputInst">To begin, please input a syllabus below:</p>
           
-            <form method="post" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input id="file" type="file" accepted=".PDF, .doc">
+                <input id="file" name="uploadFile" type="file" accepted=".PDF, .doc">
                 <br/>
                 <br/>
                 <button type="submit">Submit</button>
