@@ -20,3 +20,14 @@
         <div id="right"></div>
         <div id="divider3" class="divider"></div>
 {% endblock %}
+
+{% if uploaderror %}
+    {% block alerts %}
+        <script>
+            function showAlerts() {
+                alert("File not accepted, please try again.");
+            }
+            
+        </script>
+    {% endblock %}
+{% endif %}

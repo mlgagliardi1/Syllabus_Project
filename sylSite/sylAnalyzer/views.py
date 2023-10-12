@@ -10,6 +10,9 @@ def homepage(request):
     uploadFileForm['form'] = UploadFileForm()
     return render(request, "sylAnalyzer/base_homepage.html", uploadFileForm)
 
+def uploaderror(request):
+    return render(request, "sylAnalyzer/base_homepage.html")
+
 def results(request):
     return render(request, "sylAnalyzer/base_details.html")
 
@@ -29,4 +32,4 @@ def uploaded(request):
         return redirect("/syllabusanalyzer/results")
     else:
         form = UploadFileForm()
-        return redirect("/syllabusanalyzer/")
+        return redirect("/syllabusanalyzer/uploaderror")
