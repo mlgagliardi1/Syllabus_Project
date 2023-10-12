@@ -9,7 +9,7 @@
           
             <form action="/syllabusanalyzer/uploaded/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input required id="file" name="file" type="file" accepted=".PDF, .doc">
+                {{ form.file }}
                 <br/>
                 <br/>
                 <button type="submit">Submit</button>
