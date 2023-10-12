@@ -14,6 +14,7 @@ def homepage(request):
     }
     return render(request, "sylAnalyzer/base_homepage.html", context)
 
+
 def uploaderror(request):
     uploadFileForm = UploadFileForm()
     context = {
@@ -22,14 +23,18 @@ def uploaderror(request):
     }
     return render(request, "sylAnalyzer/base_homepage.html", context)
 
+
 def results(request):
     return render(request, "sylAnalyzer/base_details.html")
+
 
 def examples(request):
     return render(request, "sylAnalyzer/base_examples.html")
 
+
 def explanation(request):
     return render(request, "sylAnalyzer/base_explanation.html")
+
 
 def uploaded(request):
     #Create the form using models and forms.py
