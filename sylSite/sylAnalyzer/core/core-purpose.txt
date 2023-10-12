@@ -1,0 +1,12 @@
+The core directory will serve as the housing for the "backend." 
+By backend I mean the spacy analysis of the document. To do this, we
+first need to accomplish a few things.
+
+    1) Determine if the input file is a PDF or txt
+    2) Create a doc object of the input file
+
+
+CURRENTLY THE PROGRAM CAN HANDLE .TXT, .TEXT, AND .PDF FILE EXTENSIONS.
+    WILL IMPLEMENT .DOC AND .DOCX EXTENSIONS IN THE FUTURE
+    SEE VALIDATORS.PY FOR LIST OF APPROVED EXTENSIONS
+    
