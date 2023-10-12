@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.core.files.storage import FileSystemStorage
 from .forms import UploadFileForm
+from .core.docCreation import test
 
 # Create your views here.
 
@@ -14,14 +16,18 @@ def homepage(request):
     #And redirect the user to an "uploaded" page.
     #Currently, the uploaded form reads as invalid
 
-    elif request.method == "POST":
-        if request.method == "POST":
-            folder = "uploads/"
+    elif request.method == "POST" and request.FILES['uploadedFile']:
             form = UploadFileForm(request.POST, request.FILES)
             #This line prints file to show if it uploaded or not
-            print(request.FILES)
+            print(form.errors)
+
+            uploaded_file = request.FILES['uploadedFile']
+            fs = FileSystemStorage()
+            filename = fs.save(uploadedFile.name, uploadedFile)
+            uploaded_file_url = fs.url(filename)
+            
             return HttpResponse("uploaded")
-        else:
+    else:
             form = UploadFileForm()
             return HttpResponse("Form Invalid")
             
