@@ -9,7 +9,7 @@
           
             <form action="/syllabusanalyzer/uploaded/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.file }}
+                {{upload_form}}
                 <br/>
                 <br/>
                 <button type="submit">Submit</button>
@@ -21,13 +21,10 @@
         <div id="divider3" class="divider"></div>
 {% endblock %}
 
-{% if uploaderror %}
-    {% block alerts %}
+{% block alerts %}
+    {% if uploaded == False %}
         <script>
-            function showAlerts() {
-                alert("File not accepted, please try again.");
-            }
-            
+            alert("File not accepted, please try again.");
         </script>
-    {% endblock %}
-{% endif %}
+    {% endif %}   
+{% endblock %}
