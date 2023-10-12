@@ -9,7 +9,7 @@
           
             <form action="/syllabusanalyzer/uploaded/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <input required id="file" name="file" type="file" accepted=".PDF, .doc">
+                {{upload_form}}
                 <br/>
                 <br/>
                 <button type="submit">Submit</button>
@@ -19,4 +19,12 @@
         <!--        Right Panel     -->
         <div id="right"></div>
         <div id="divider3" class="divider"></div>
+{% endblock %}
+
+{% block alerts %}
+    {% if uploaded == False %}
+        <script>
+            alert("File not accepted, please try again.");
+        </script>
+    {% endif %}   
 {% endblock %}
