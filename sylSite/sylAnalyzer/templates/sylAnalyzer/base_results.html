@@ -1,0 +1,59 @@
+<!--        Extends the base template       -->
+{% extends "sylAnalyzer/base.html" %}
+
+<!--
+    List of available blocks when extending the base template:
+    tabTitle
+    stylesheet
+    javascript
+    pageTitle
+    content
+    footerText
+-->
+
+{% block pageTitle %}
+    Analysis Results
+{% endblock %}
+
+{% block content %}
+        <!--        Left Panel      -->
+        <div id="left">
+            <p id="resultsTextLeft">Results of your analysis:</p>
+                <ul id="requiredSections">
+                    <li>Course Information</li>
+                    <li>Instructor Information</li>
+                    <li>Course Description</li>
+                    <li>Learning Outcomes</li>
+                    <li>Resources</li>
+                    <li>Course Evaluation</li>
+                    <li>Course Adaptation</li>
+                    <li>Academic Ethics</li>
+                    <li>Academic Accommodations</li>
+                    <li>Student Policies</li>
+                    <li>Make Up Policy</li>
+                    <li>Course Schedule</li>
+                </ul>
+                <br/>
+                <br/>
+
+            <p id="sylScore">Overall syllabus Score:</p>
+                <p>50%</p>
+        </div>
+
+        <!--        Right Panel     -->
+        <div id="right">
+            <p id="reccommendedImprovements">Recommended improvements:</p>
+                <p>Your syllabus does not require improvements!</p>
+                <br/>
+                <br/>
+
+            <p id="providedtemplates">Here are some templates you could use!</p>
+                <ul>
+                    <li>Download template here!</li>
+                    <li>Download template here!</li>
+                    <li>Download template here!</li>
+                </ul>
+
+        </div>
+        <div id="divider3" class="divider"></div>
+{% endblock %}

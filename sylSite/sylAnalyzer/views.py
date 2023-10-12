@@ -23,7 +23,7 @@ def uploaderror(request):
     return render(request, "sylAnalyzer/base_homepage.html", context)
 
 def results(request):
-    return render(request, "sylAnalyzer/base_details.html")
+    return render(request, "sylAnalyzer/base_results.html")
 
 def examples(request):
     return render(request, "sylAnalyzer/base_examples.html")

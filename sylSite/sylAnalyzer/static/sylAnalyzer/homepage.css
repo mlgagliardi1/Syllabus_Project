@@ -1,12 +1,16 @@
 :root {
-    --backgroundColor: black;
+    font-size: 10px;
+    --textColor: black;
+    --backgroundColor: #e0ebeb;
+    --headerColor: #24527a;
+    --navColor: #5dacbd;
+    --contentColor1: #a7bcb9;
 }
 
 /*      ELEMENT SELECTORS       */
 html {    
-    font-size: 10px;
     font-family:Arial, Helvetica, sans-serif;
-    color: white;
+    color: var(--textColor);
     background-color: var(--backgroundColor);
 }
 
@@ -19,6 +23,7 @@ header {
     width: 100%;
     margin-bottom: 0;
     display: inline-flex;
+    background-color: var(--headerColor);
 }
 
 footer {
@@ -27,7 +32,6 @@ footer {
     clear: both;
     text-align: center;
     font-size: 1.5rem;
-    background-color: var(--backgroundColor);
 }
 
 
@@ -37,14 +41,12 @@ footer {
 #logo {
     height: 100%;
     width: 20%;
-    background-color: teal;
 }
 
 #title {
     height: 100%;
     width: 60%;
     overflow: hidden;
-    background-color: lightblue;
 }
 
 #title p {
@@ -53,20 +55,18 @@ footer {
     text-align: center;
     font-size: 5rem;
     font-weight: bold;
-    color: var(--backgroundColor);
 }
 
 #login {
     height: 100%;
     width: 20%;
-    background-color: lightgreen;
 }
 
 /* TOP NAVIGATION */
 #topNav {
     height: 7rem;
     width: 100%;
-    background-color: lightgreen;
+    background-color: var(--navColor);
 }
 
 #topNavLinks {
@@ -82,20 +82,19 @@ footer {
     width: 50%;
     float: left;
     text-align: center;
+    font-size: 1.6rem;
     border: none;
-    background-color: lightskyblue;
+    background-color: var(--contentColor1);
 }
 
-#inputInst {
-    font-size: 1.6rem;
-}
 
 #right {
     height: 50rem;
     width: 50%;
     float: right;
+    font-size: 1.6rem;
     border: none;
-    background-color: lightblue;
+    background-color: var(--contentColor1);
 }
 
 
@@ -122,10 +121,10 @@ footer {
 .navLink:hover, .navLink:active {
     transform: scale(1.2);
     transition-duration: 1s;
-    color: black;
-    background-color: green;
+    background-color: var(--headerColor);
 }
 
-.headerLink {
+.headerLink:link, .headerLink:visited, .headerLink:hover, .headerLink:active {
     text-decoration: none;
+    color: var(--backgroundColor);
 }
