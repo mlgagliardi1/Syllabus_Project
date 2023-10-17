@@ -26,14 +26,6 @@ def containsCourseInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         courseInfo = True
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-        
     #Return the courseInfo boolean
     return courseInfo
    
@@ -52,15 +44,7 @@ def containsInstructorInformation(doc):
     matches = matcher(doc)
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
-        instructorInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
+        instructorInfo = True      
     #Return the courseInfo boolean
     return instructorInfo    
     
@@ -80,14 +64,6 @@ def containsOfficeHoursInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         officeHoursInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return officeHoursInfo     
     
@@ -107,14 +83,6 @@ def containsContactInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         contactInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return contactInfo
 
@@ -134,14 +102,6 @@ def containsCourseDescriptionInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         courseDescriptionInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return courseDescriptionInfo     
         
@@ -161,14 +121,6 @@ def containsLearningOutcomesInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         learningOutcomesInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return learningOutcomesInfo 
 
@@ -188,14 +140,6 @@ def containsResourcesInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         resourcesInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return resourcesInfo  
 
@@ -214,15 +158,7 @@ def containsGradingScaleInformation(doc):
     matches = matcher(doc)
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
-        gradingScaleInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
+        gradingScaleInfo = True      
     #Return the courseInfo boolean
     return gradingScaleInfo  
 
@@ -242,14 +178,6 @@ def containsParticipationInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         participationInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return participationInfo  
 
@@ -269,14 +197,6 @@ def containsMidtermInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         midtermInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return midtermInfo  
 
@@ -296,14 +216,6 @@ def containsFinalInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         finalInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return finalInfo  
 
@@ -323,14 +235,6 @@ def containsCourseAdaptationInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         courseAdaptationInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return courseAdaptationInfo  
 
@@ -350,14 +254,6 @@ def containsAcademicEthicsInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         academicEthicsInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return academicEthicsInfo  
 
@@ -377,14 +273,6 @@ def containsAcademicAccomodationInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         academicAccomodationInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return academicAccomodationInfo  
 
@@ -403,15 +291,7 @@ def containsStudentPoliciesInformation(doc):
     matches = matcher(doc)
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
-        studentPoliciesInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
+        studentPoliciesInfo = True   
     #Return the courseInfo boolean
     return studentPoliciesInfo  
 
@@ -431,14 +311,6 @@ def containsMakeUpPolicyInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         makeUpPolicyInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return makeUpPolicyInfo 
 
@@ -458,13 +330,37 @@ def containsCourseScheduleInformation(doc):
     #Check if there are any matches, and if so update the courseInfo bool
     if matches:
         courseScheduleInfo = True  
-
-        """     TEMPORARILY PRINT THE MATCHED VALUES AND THEIR LOCATION     """
-
-        for match_id, start, end in matches:
-            string_id = doc.vocab.strings[match_id]     #Get string representation
-            span = doc[start:end]                       #The matched span
-            print(string_id, start, end, span.text)
-             
     #Return the courseInfo boolean
     return courseScheduleInfo  
+
+
+"""
+    Storage for print statements:
+    
+    #For now, print the results of the above analysis to terminal
+    print("Course Info Present: " + str(courseInfo))
+    print("Instructor Info Present: " + str(instructorInfo))
+    print("Office Hours Present: " + str(officeHoursInfo))
+    print("Contact Info Present: " + str(contactInfo))
+    print("Course Description Present: " + str(courseDescriptionInfo))
+    print("Learning Outcomes Present: " + str(learningOutcomesInfo))
+    print("Resources Present: " + str(resourcesInfo))
+    print("Grading Scale Present: " + str(gradingScaleInfo))
+    print("Participation Present: " + str(participationInfo))
+    print("Midterm Info Present: " + str(midtermInfo))
+    print("Final Info Present: " + str(finalInfo))
+    print("Course Adaptation Present: " + str(courseAdaptationInfo))
+    print("Academic Ethics Present: " + str(academicEthicsInfo))
+    print("Academic Accomodations Present: " + str(academicAccomodationInfo))
+    print("Student Policies Present: " + str(studentPoliciesInfo))
+    print("Make Up Policy Present: " + str(makeUpPolicyInfo))
+    print("Course Schedule Present: " + str(courseScheduleInfo))
+
+
+    Storage for printing match id and location:
+
+    for match_id, start, end in matches:
+        string_id = doc.vocab.strings[match_id]     #Get string representation
+        span = doc[start:end]                       #The matched span
+        print(string_id, start, end, span.text)
+"""
