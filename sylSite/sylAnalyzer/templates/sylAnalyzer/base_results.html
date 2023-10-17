@@ -39,16 +39,19 @@
                     <li>Course Schedule {{courseScheduleInfo}}</li>
                 </ul>
                 <br/>
-                <br/>
 
             <p id="sylScore">Overall syllabus Score:</p>
-                <p>50%</p>
+                <p> {{syllabusScore}} </p>
         </div>
 
         <!--        Right Panel     -->
         <div id="right">
             <p id="reccommendedImprovements">Recommended improvements:</p>
-                <p>Your syllabus does not require improvements!</p>
+                <ul> {{improvements}} </ul>
+
+                    <!--    Need to find a way to loop over context and assign missing sections to list     -->
+                    <li> {{missingSection1}} </li>
+
                 <br/>
                 <br/>
 

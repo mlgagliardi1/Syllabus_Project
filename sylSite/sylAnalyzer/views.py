@@ -5,6 +5,8 @@ from sylSite.settings import MEDIA_ROOT
 from .forms import UploadFileForm
 from .core.doc_creation import init
 from .core.section_analysis import *
+from .core.score_creation import calculateSylScore
+from .core.improvements import createImprovements
 import os
 
 
@@ -54,25 +56,6 @@ def results(request):
     makeUpPolicyInfo = containsMakeUpPolicyInformation(doc)
     courseScheduleInfo = containsCourseScheduleInformation(doc)
 
-    #For now, print the results of the above analysis to terminal
-    print("Course Info Present: " + str(courseInfo))
-    print("Instructor Info Present: " + str(instructorInfo))
-    print("Office Hours Present: " + str(officeHoursInfo))
-    print("Contact Info Present: " + str(contactInfo))
-    print("Course Description Present: " + str(courseDescriptionInfo))
-    print("Learning Outcomes Present: " + str(learningOutcomesInfo))
-    print("Resources Present: " + str(resourcesInfo))
-    print("Grading Scale Present: " + str(gradingScaleInfo))
-    print("Participation Present: " + str(participationInfo))
-    print("Midterm Info Present: " + str(midtermInfo))
-    print("Final Info Present: " + str(finalInfo))
-    print("Course Adaptation Present: " + str(courseAdaptationInfo))
-    print("Academic Ethics Present: " + str(academicEthicsInfo))
-    print("Academic Accomodations Present: " + str(academicAccomodationInfo))
-    print("Student Policies Present: " + str(studentPoliciesInfo))
-    print("Make Up Policy Present: " + str(makeUpPolicyInfo))
-    print("Course Schedule Present: " + str(courseScheduleInfo))
-
     #Create the context variable (returned to template render)
     context = {
         "courseInfo": courseInfo,
@@ -93,6 +76,18 @@ def results(request):
         "makeUpPolicyInfo": makeUpPolicyInfo,
         "courseScheduleInfo": courseScheduleInfo,
     }
+
+    #Send the context variable to score_creation.py for score analysis
+    #Format as %, update context variable
+    sylScore = ("{:.0%}".format(calculateSylScore(context)))
+    sylScore = {"syllabusScore": sylScore}
+    context.update(sylScore)
+
+    #Send the context variable to improvements.py for improvement analysis
+    #Update context variable
+    improvements = createImprovements(context)
+    context.update(improvements)
+
     #Render the results template with the context data
     return render(request, "sylAnalyzer/base_results.html", context)
 
