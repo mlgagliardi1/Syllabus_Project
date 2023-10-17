@@ -5,6 +5,9 @@
     --headerColor: #24527a;
     --navColor: #5dacbd;
     --contentColor1: #a7bcb9;
+    --contentColor2: #63b1a5;
+    --sectionIncludedColor: green;
+    --sectionNotIncludedColor: red;
 }
 
 /*      ELEMENT SELECTORS       */
@@ -24,6 +27,10 @@ header {
     margin-bottom: 0;
     display: inline-flex;
     background-color: var(--headerColor);
+}
+
+ul {
+    list-style-type: none;
 }
 
 footer {
@@ -87,6 +94,10 @@ footer {
     background-color: var(--contentColor1);
 }
 
+#sectionsCont {
+    text-align: left;
+}
+
 
 #right {
     height: 50rem;
@@ -127,4 +138,21 @@ footer {
 .headerLink:link, .headerLink:visited, .headerLink:hover, .headerLink:active {
     text-decoration: none;
     color: var(--backgroundColor);
+}
+
+.container {
+    overflow: auto;
+}
+
+.sectionTitle {
+    margin-left: 2rem;
+    font-weight: bold;
+}
+
+.includedSection {
+    color: var(--sectionIncludedColor);
+}
+
+.notIncludedSection {
+    color: var(--sectionNotIncludedColor);
 }
