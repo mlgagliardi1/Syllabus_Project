@@ -1,5 +1,6 @@
 <!--        Extends the base template       -->
 {% extends "sylAnalyzer/base.html" %}
+{% load static %}
 
 <!--
     List of available blocks when extending the base template:
@@ -10,6 +11,9 @@
     content
     footerText
 -->
+{% block stylesheet %}
+    {% static 'sylanalyzer\\results.css'%}
+{% endblock %}
 
 {% block pageTitle %}
     Analysis Results
@@ -18,50 +22,188 @@
 {% block content %}
         <!--        Left Panel      -->
         <div id="left">
-            <p id="resultsTextLeft">Results of your analysis:</p>
-                <ul id="requiredSections">
-                    <li>Course Information {{courseInfo}}</li>
-                    <li>Instructor Information {{instructorInfo}}</li>
-                    <li>Office Hours {{officeHoursInfo}}</li>
-                    <li>Contact Info {{contactInfo}}</li>
-                    <li>Course Description {{courseDescriptionInfo}}</li>
-                    <li>Learning Outcomes {{learningOutcomesInfo}}</li>
-                    <li>Resources {{resourcesInfo}}</li>
-                    <li>Grading Scale Information {{gradingScaleInfo}}</li>
-                    <li>Participation Information {{participationInfo}}</li>
-                    <li>Midterm Information {{midtermInfo}}</li>
-                    <li>Final Information {{finalInfo}}</li>
-                    <li>Course Adaptation {{courseAdaptationInfo}}</li>
-                    <li>Academic Ethics {{academicEthicsInfo}}</li>
-                    <li>Academic Accommodations {{academicAccomodationsInfo}}</li>
-                    <li>Student Policies {{studentPoliciesInfo}}</li>
-                    <li>Make Up Policy {{makeUpPolicyInfo}}</li>
-                    <li>Course Schedule {{courseScheduleInfo}}</li>
-                </ul>
-                <br/>
-
-            <p id="sylScore">Overall syllabus Score:</p>
-                <p> {{syllabusScore}} </p>
+            <div id="sectionsCont" class="container">
+                <p id="resultsTextLeft" class="sectionTitle">Recommended Sections:</p>
+                    <ul id="requiredSections">
+                        <li 
+                            {% if courseInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}>
+                            Course Information
+                        </li>
+                        <li
+                            {% if instructorInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}>
+                            Instructor Information
+                        </li>
+                        <li
+                            {% if officeHoursInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}>
+                            Office Hours
+                        </li>
+                        <li
+                            {% if contactInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}>
+                            Contact Information
+                        </li>
+                        <li
+                            {% if courseDescriptionInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}>
+                            Course Description
+                        </li>
+                        <li
+                            {% if learningOutcomesInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}>
+                            Learning Outcomes 
+                        </li>
+                        <li
+                            {% if resourcesInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}>    
+                            Resources
+                        </li>
+                        <li
+                            {% if gradingScaleInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}> 
+                            Grading Scale Information
+                        </li>
+                        <li
+                            {% if participationInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}>  
+                            Participation Information
+                        </li>
+                        <li
+                            {% if midtermInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}>
+                            Midterm Information
+                        </li>
+                        <li
+                            {% if finalInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}>
+                            Final Information
+                        </li>
+                        <li
+                            {% if courseAdaptationInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}> 
+                            Course Adaptation
+                        </li>
+                        <li
+                            {% if academicEthicsInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}> 
+                            Academic Ethics
+                        </li>
+                        <li
+                            {% if academicAccomodationsInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}> 
+                            Academic Accommodations
+                        </li>
+                        <li
+                            {% if studentPoliciesInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}> 
+                            Student Policies
+                        </li>
+                        <li
+                            {% if makeUpPolicyInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}> 
+                            Make Up Policy
+                        </li>
+                        <li
+                            {% if courseScheduleInfo %}class="includedSection"
+                            {% else %}class="notIncludedSection"
+                            {% endif %}> 
+                            Course Schedule
+                        </li>
+                    </ul>
+                    <br/>
+            </div>
+            <div id="sylScoreCont" class="container">
+                <p id="sylScore" class="sectionTitle">Overall syllabus Score:</p>
+                    <p> {{syllabusScore}} </p>
+            </div>
         </div>
 
         <!--        Right Panel     -->
         <div id="right">
-            <p id="reccommendedImprovements">Recommended improvements:</p>
-                <ul> {{improvements}} </ul>
+            <div id="reccommendedImprovementsCont" class="container">
+                <p id="reccommendedImprovements" class="sectionTitle">{{improvements}}</p>
+                    <ul> 
+                        <!--    Add all missing sections to <ul>     -->
+                        {% if missingSection1 %}
+                            <li>{{missingSection1}}</li>
+                        {% endif %}
+                        {% if missingSection2 %}
+                            <li>{{missingSection2}}</li>
+                        {% endif %}
+                        {% if missingSection3 %}
+                            <li>{{missingSection3}}</li>
+                        {% endif %}
+                        {% if missingSection4 %}
+                            <li>{{missingSection4}}</li>
+                        {% endif %}
+                        {% if missingSection5 %}
+                            <li>{{missingSection5}}</li>
+                        {% endif %}
+                        {% if missingSection6 %}
+                            <li>{{missingSection6}}</li>
+                        {% endif %}
+                        {% if missingSection7 %}
+                            <li>{{missingSection7}}</li>
+                        {% endif %}
+                        {% if missingSection8 %}
+                            <li>{{missingSection8}}</li>
+                        {% endif %}
+                        {% if missingSection9 %}
+                            <li>{{missingSection9}}</li>
+                        {% endif %}
+                        {% if missingSection10 %}
+                            <li>{{missingSection10}}</li>
+                        {% endif %}
+                        {% if missingSection11 %}
+                            <li>{{missingSection11}}</li>
+                        {% endif %}
+                        {% if missingSection12 %}
+                            <li>{{missingSection12}}</li>
+                        {% endif %}
+                        {% if missingSection13 %}
+                            <li>{{missingSection13}}</li>
+                        {% endif %}
+                        {% if missingSection14 %}
+                            <li>{{missingSection14}}</li>
+                        {% endif %}
+                        {% if missingSection15 %}
+                            <li>{{missingSection15}}</li>
+                        {% endif %}
+                        {% if missingSection16 %}
+                            <li>{{missingSection16}}</li>
+                        {% endif %}
+                        {% if missingSection17 %}
+                            <li>{{missingSection17}}</li>
+                        {% endif %}
+                    </ul>
+            </div>
 
-                    <!--    Need to find a way to loop over context and assign missing sections to list     -->
-                    <li> {{missingSection1}} </li>
-
-                <br/>
-                <br/>
-
-            <p id="providedtemplates">Here are some templates you could use!</p>
-                <ul>
-                    <li>Download template here!</li>
-                    <li>Download template here!</li>
-                    <li>Download template here!</li>
-                </ul>
-
+            <div id="providedTemplatesCont" class="container">
+                <p id="providedtemplates" class="sectionTitle">Here are some templates you could use!</p>
+                    <ul>
+                        <li>Download template here!</li>
+                        <li>Download template here!</li>
+                        <li>Download template here!</li>
+                    </ul>
+            </div>
         </div>
         <div id="divider3" class="divider"></div>
 {% endblock %}
