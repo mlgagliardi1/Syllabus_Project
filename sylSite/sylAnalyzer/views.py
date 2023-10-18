@@ -17,6 +17,15 @@ def homepage(request):
     context = {
         "upload_form": uploadFileForm,
     }
+    #Delete all prior uploads
+    uploadFolder = MEDIA_ROOT + "\\uploads\\"
+    for filename in os.listdir(uploadFolder):
+        file_path = os.path.join(uploadFolder, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            print ("Failed to delete %s. Reason %s" % (file_path, e))
     return render(request, "sylAnalyzer/base_homepage.html", context)
 
 
